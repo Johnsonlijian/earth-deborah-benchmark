@@ -1,0 +1,5 @@
+archive,metric_family,raw_axis_weighted_variance,de_axis_weighted_variance,reduction_vs_raw,min_units_per_bin,raw_bins_used,de_bins_used,n_gauges,n_curve_points
+CAMELS-US,observed_beta,0.5172401280198445,0.3973668493094626,0.23175556616091253,50,24,24,673,83292
+CAMELS-US,ar1_conditioned_residual,0.4667387349197103,0.3976058421075279,0.1481190388538779,50,24,24,673,83292
+CAMELS-GB,observed_beta,0.2759265228680077,0.2345954782558418,0.14979003896605114,45,24,24,664,81956
+CAMELS-GB,ar1_conditioned_residual,0.24798455364932842,0.2343811920101528,0.05485568128735929,45,24,24,664,81956

@@ -1,0 +1,3 @@
+file,approx_bytes,reason,generating_script,public_release_status
+r37_gauge_matched_analytic_nulls_curves.csv,116108513,Exceeds GitHub 100 MB hard file limit,scripts/run_r37_gauge_matched_analytic_nulls.py,Not tracked in Git; regenerate from the script after obtaining required derived inputs
+r39_open_model_intercomparison_curves.csv,61520297,Exceeds GitHub 50 MB recommended file size,scripts/run_r39_open_model_intercomparison.py,Not tracked in Git; regenerate from the script after obtaining CAMELS-GB v2 and optional model dependencies

@@ -1,0 +1,7 @@
+proxy,column,n,spearman_rho_logtau,p_value
+intergranular high productivity,inter_high_perc,664,0.30146284113194344,2.0391316117697946e-15
+intergranular moderate productivity,inter_mod_perc,664,0.25406859598885767,3.0553848722828895e-11
+fracture high productivity,frac_high_perc,664,0.6303904588421183,7.625522165234446e-75
+fracture moderate productivity,frac_mod_perc,664,-0.13048494905018382,0.0007504634307942242
+no groundwater aquifer,no_gw_perc,664,-0.4548418014161596,3.2508566694028247e-35
+low productivity aquifer,low_nsig_perc,664,-0.09007114826938512,0.020269691067467923

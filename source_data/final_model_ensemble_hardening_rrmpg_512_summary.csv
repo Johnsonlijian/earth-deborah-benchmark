@@ -1,0 +1,7 @@
+model_type,model_label,n_gauges,median_eval_nse,median_eval_kge,median_beta_de_distance,median_abs_log10_tau_error,spearman_nse_vs_beta_de_distance,spearman_p_value
+rrmpg_gr4j,RRMPG GR4J,578,0.3175030583360031,0.464029457125138,0.4964629657253177,0.9897094358881802,0.058208117625122,0.16224109858247307
+rrmpg_hbvedu,RRMPG HBV-Edu,590,0.4506768293545169,0.5693095349568604,0.5439633475280108,0.7359573087245115,0.02860112706101873,0.4880663925479404
+global_lstm,global LSTM,0,,,,,,
+seasonal_climatology,seasonal climatology,0,,,,,,
+seasonal_ar1_null,seasonal AR(1) null,0,,,,,,
+lagged_q_lower_bound,lagged-Q lower bound,0,,,,,,

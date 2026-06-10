@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Environments and secrets
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Raw or restricted data: keep directory placeholders only.
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/external/*
+!data/external/.gitkeep
+!data/external/river_sample_template.csv
+
+# Local logs and private manuscript/review material
+logs/
+rounds/
+manuscripts/
+cover_letters/
+reviewer_responses/
+submission_*/
+paper_attack/
+multi_model_review/
+writing_audit/
+project_completion/
+literature_review/*_draft*
+*.log
+*.zip
+*.7z
+*.tar
+*.tar.gz
+reports/logs/
+reports/tables/*daily_values_derived.csv
+source_data/r37_gauge_matched_analytic_nulls_curves.csv
+source_data/r39_open_model_intercomparison_curves.csv
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,4 @@
+contract,n,n_catchments,spearman_rho_log_gw_tau_vs_log_discharge_tau,p_value
+well_level_smallest_containing_catchment,52,42,-0.233209518144658,0.09614294211477778
+catchment_median_wells_smallest_containing,42,42,-0.22404991491775383,0.15375390353282062
+catchment_median_groundwater_tau_vs_bfi,42,42,0.031716435544655454,0.841955372679579

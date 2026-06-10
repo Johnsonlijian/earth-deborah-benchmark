@@ -1,0 +1,7 @@
+evidence_level,status,score,claim_boundary,support
+DK daily storage states,strong,3.5,process-model storage-state compatibility,CAMELS-DK gauged catchments; daily phreatic/soil-water/deep-groundwater memory
+DK storage-state coordinates,bounded,2.2,soil-water tau helps; deeper groundwater tau does not,"alternative De coordinates from DK-model phreatic, soil-water and groundwater-head states"
+cross-archive static proxies,strong,3.0,independent catchment-property support,"US/GB/BR/AUS/DK soil, geology and hydrogeology associations"
+streamflow-derived BFI/recession,bounded,2.0,useful but not independent,large-sample BFI/recession association with tau_acf
+GB matched groundwater wells,negative,1.0,"explicit non-significant boundary rho=-0.233, p=0.096",official CAMELS-GB v2 boundaries and 53 monthly wells
+direct tracer transit time,bounded,1.4,CAMELS-Chem screen mixed; direct De-tracer causality unclosed,CAMELS-Chem passive-solute screen and Plynlimon tracer anchor are not large-sample De-tracer causality

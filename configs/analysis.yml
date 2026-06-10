@@ -1,0 +1,24 @@
+preprocess:
+  remove_linear_trend: true
+  remove_seasonality: true
+  robust_standardize: true
+
+psd:
+  regular_method: welch
+  irregular_method: lomb_scargle
+  welch:
+    nperseg: null
+  lomb_scargle:
+    min_freq: null
+    max_freq: null
+    n_freqs: 512
+
+local_slope:
+  window_decades: 0.75
+  min_points: 8
+
+null_models:
+  - white_noise
+  - ar1
+  - phase_randomized
+  - seasonal_noise

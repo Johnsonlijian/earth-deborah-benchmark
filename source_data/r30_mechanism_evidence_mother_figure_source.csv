@@ -1,0 +1,6 @@
+archive,role,beta_variance_reduction_percent,source_table
+CAMELS-US,primary positive archive,23.7,reports/tables/camels_673_collapse_metrics.csv
+CAMELS-GB v2,external replication,14.7,reports/tables/camels_gb_v2_replication_collapse_metrics.csv
+CAMELS-BR v1.2,third archive,12.2,reports/tables/r23_camels_br_third_archive_archive_metrics.csv
+CAMELS-AUS v2,dry-continent fourth archive,6.4,reports/tables/r25_camels_aus_fourth_archive_archive_metrics.csv
+CAMELS-DK,lowland boundary archive,-5.2,reports/tables/r27_camels_dk_groundwater_storage_validation_archive_metrics.csv

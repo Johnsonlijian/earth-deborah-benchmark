@@ -1,0 +1,9 @@
+aggregation,metric,metric_label,n_gauges,spearman_rho,spearman_p,partial_controls,partial_rho,partial_p,partial_n,partial_q_bh
+all_solutes,median_inverse_chem_damping,median sd(log C) / sd(log Q),141,0.3065114088788047,0.00021850081612763533,"rank(log area, mean precipitation, aridity)",0.28411747078213967,0.000639418058728744,141,0.005115344469829952
+all_solutes,median_abs_cq_slope,median |log C-log Q slope|,141,0.12779656663384562,0.13099461244621102,"rank(log area, mean precipitation, aridity)",0.14666723746735733,0.08265724501562022,141,0.2204193200416539
+all_solutes,median_cq_spearman,"median Spearman(C,Q)",141,0.031088659617278133,0.7143950977107608,"rank(log area, mean precipitation, aridity)",-0.054099062459865566,0.5240341217153435,141,0.6390854150788784
+all_solutes,median_cq_r2,median C-Q R2,141,-0.027980649856586326,0.7418845565837922,"rank(log area, mean precipitation, aridity)",0.04959544501048845,0.5591997381940186,141,0.6390854150788784
+conservative_weathering,median_inverse_chem_damping,median sd(log C) / sd(log Q),138,0.2857583181312772,0.000680056692544888,"rank(log area, mean precipitation, aridity)",0.22571571432159251,0.007770465506417708,138,0.031081862025670832
+conservative_weathering,median_abs_cq_slope,median |log C-log Q slope|,138,0.09940660610197972,0.246041868828726,"rank(log area, mean precipitation, aridity)",0.09127854809139041,0.28698849298433776,138,0.5739769859686755
+conservative_weathering,median_cq_spearman,"median Spearman(C,Q)",138,0.04298053147453475,0.6166908684179101,"rank(log area, mean precipitation, aridity)",-0.07355207550874565,0.3912547883045468,138,0.6260076612872749
+conservative_weathering,median_cq_r2,median C-Q R2,138,-0.03742788060887374,0.6629589708921957,"rank(log area, mean precipitation, aridity)",0.0352588763644749,0.6813965236618768,138,0.6813965236618768

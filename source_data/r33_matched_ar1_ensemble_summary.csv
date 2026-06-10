@@ -1,0 +1,3 @@
+archive,family,observed_reduction,null_median_reduction,null_p05_reduction,null_p95_reduction,observed_minus_null_median,n_null_draws,null_draws_ge_observed,empirical_p_ge_observed
+CAMELS-GB,matched_ar1,0.1469384257196944,0.656659560686178,0.6525343964202444,0.6607217762015005,-0.5097211349664836,100,100,1.0
+CAMELS-US,matched_ar1,0.23689239695462794,0.6902544548320213,0.6856098852135959,0.6956350143018851,-0.45336205787739337,100,100,1.0

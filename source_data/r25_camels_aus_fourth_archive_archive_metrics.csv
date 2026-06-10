@@ -1,0 +1,2 @@
+archive,n_gauges,median_tau_acf_days,median_aridity,median_zero_flow_fraction,raw_weighted_beta_variance,de_weighted_beta_variance,variance_reduction_fraction,raw_n_bins,de_n_bins
+CAMELS-AUS v2,560,8.636153967037737,1.362092,0.023622121621845814,0.35470304370441175,0.3318874741372399,0.06432301603305376,24,24

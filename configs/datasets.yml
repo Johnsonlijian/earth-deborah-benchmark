@@ -1,0 +1,33 @@
+datasets:
+  usgs_comcat:
+    name: "ANSS Comprehensive Earthquake Catalog"
+    url: "https://earthquake.usgs.gov/data/comcat/"
+    process: "earthquake"
+    first_pass_variable:
+      - "event_count"
+      - "energy_release_rate"
+    include_raw_data_in_public_repo: false
+
+  nasa_glc:
+    name: "NASA Global Landslide Catalog"
+    url: "https://data.nasa.gov/dataset/global-landslide-catalog-export"
+    process: "landslide"
+    first_pass_variable:
+      - "event_count"
+    include_raw_data_in_public_repo: false
+
+  grdc:
+    name: "Global Runoff Data Centre"
+    url: "https://grdc.bafg.de/"
+    process: "river"
+    first_pass_variable:
+      - "discharge_anomaly"
+    include_raw_data_in_public_repo: false
+
+  its_live:
+    name: "ITS_LIVE"
+    url: "https://its-live.jpl.nasa.gov/"
+    process: "glacier"
+    first_pass_variable:
+      - "velocity_anomaly"
+    include_raw_data_in_public_repo: false

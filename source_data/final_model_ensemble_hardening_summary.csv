@@ -1,0 +1,13 @@
+analysis,metric,n_draws,median,q05,q95,interpretation
+seasonal_ar1_ensemble,median_eval_nse,50,-0.16281581487636385,-0.1696533611406429,-0.15667766409779932,null-generation uncertainty for the seasonal AR(1) baseline
+seasonal_ar1_ensemble,median_eval_kge,50,0.09482561403283132,0.09094216042054354,0.09958733113790595,null-generation uncertainty for the seasonal AR(1) baseline
+seasonal_ar1_ensemble,median_beta_de_distance,50,0.47710464373774886,0.47088859064190475,0.4833037767286884,null-generation uncertainty for the seasonal AR(1) baseline
+seasonal_ar1_ensemble,median_abs_log10_tau_error,50,0.2027214309940853,0.19123207400393127,0.21569343222035553,null-generation uncertainty for the seasonal AR(1) baseline
+global_lstm_seed_ensemble,median_eval_nse,5,0.45003007450700894,0.43824627742995337,0.4625072167001693,seed-sensitivity check for the lightweight global LSTM baseline
+global_lstm_seed_ensemble,median_eval_kge,5,0.46408999020725994,0.43898220604702226,0.5170580329383335,seed-sensitivity check for the lightweight global LSTM baseline
+global_lstm_seed_ensemble,median_beta_de_distance,5,0.4363637067258681,0.41475338354952773,0.44314340813406655,seed-sensitivity check for the lightweight global LSTM baseline
+global_lstm_seed_ensemble,median_abs_log10_tau_error,5,0.6815697745215374,0.5921492235196874,0.713399402753083,seed-sensitivity check for the lightweight global LSTM baseline
+rrmpg_budget_512,rrmpg_gr4j_median_beta_de_distance,578,0.4964629657253177,,,512-sample calibration-budget sensitivity; still not an operational model ranking
+rrmpg_budget_512,rrmpg_hbvedu_median_beta_de_distance,590,0.5439633475280108,,,512-sample calibration-budget sensitivity; still not an operational model ranking
+rrmpg_512_minus_128_paired_delta,rrmpg_gr4j_beta_de_distance_delta,555,0.002576735620570203,-0.5140135388653192,0.5261032689312756,negative values mean the larger budget reduces beta(De) distance
+rrmpg_512_minus_128_paired_delta,rrmpg_hbvedu_beta_de_distance_delta,581,-0.003379389455194559,-0.28364999828829407,0.24753721563090902,negative values mean the larger budget reduces beta(De) distance

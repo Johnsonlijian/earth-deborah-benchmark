@@ -1,0 +1,39 @@
+analysis_group,method,axis_column,weighted_beta_variance,n_units,n_bins_used,n_unit_bin_values,variance_reduction_vs_raw,random_p05,random_p95,empirical_p_ge_crossfit,reduction_percent,panel,config_id,nperseg,slope_window_decades,axis,archive,support_contract,binning,n_points,n_gauges,raw_axis_weighted_variance,de_axis_weighted_variance,reduction_vs_raw,raw_bins_used,de_bins_used,raw_station_bin_values,de_station_bin_values,scenario,class
+all,same_segment_tau,de_same,0.4881446666025138,2648.0,24.0,40012.0,0.1427311798703452,,,,14.273117987034519,a_temporal_crossfit,,,,,,,,,,,,,,,,,,
+all,crossfit_tau,de_crossfit,0.4766674004751399,2648.0,24.0,41098.0,0.1628872996940196,,,,16.28872996940196,a_temporal_crossfit,,,,,,,,,,,,,,,,,,
+block_1,same_segment_tau,de_same,0.4643119014130864,662.0,24.0,10041.0,0.164122041627422,,,,16.4122041627422,a_temporal_crossfit,,,,,,,,,,,,,,,,,,
+block_1,crossfit_tau,de_crossfit,0.4423941502053606,662.0,24.0,10245.0,0.2035794948520221,,,,20.35794948520221,a_temporal_crossfit,,,,,,,,,,,,,,,,,,
+block_2,same_segment_tau,de_same,0.4299236560247813,662.0,24.0,9905.0,0.1976721474902193,,,,19.76721474902193,a_temporal_crossfit,,,,,,,,,,,,,,,,,,
+block_2,crossfit_tau,de_crossfit,0.4659420574667881,662.0,24.0,10347.0,0.1304542443233957,,,,13.04542443233957,a_temporal_crossfit,,,,,,,,,,,,,,,,,,
+block_3,same_segment_tau,de_same,0.5042066156247184,662.0,24.0,9864.0,0.1093392789675797,,,,10.93392789675797,a_temporal_crossfit,,,,,,,,,,,,,,,,,,
+block_3,crossfit_tau,de_crossfit,0.4735012114088967,662.0,24.0,10268.0,0.1635791413790853,,,,16.35791413790853,a_temporal_crossfit,,,,,,,,,,,,,,,,,,
+block_4,same_segment_tau,de_same,0.5492201043108246,662.0,24.0,10225.0,0.1140229012672752,,,,11.40229012672752,a_temporal_crossfit,,,,,,,,,,,,,,,,,,
+block_4,crossfit_tau,de_crossfit,0.5257070486563525,662.0,24.0,10235.0,0.1519531020512228,,,,15.195310205122281,a_temporal_crossfit,,,,,,,,,,,,,,,,,,
+,,,0.2183656603167536,673.0,,,,,,,21.83656603167536,b_estimator_sensitivity,welch1024_slope0.7,1024.0,0.7,variance_reduction,,,,,,,,,,,,,,
+,,,0.2568634120630456,673.0,,,,,,,25.686341206304558,b_estimator_sensitivity,welch1024_slope0.9,1024.0,0.9,variance_reduction,,,,,,,,,,,,,,
+,,,0.2877739428266735,673.0,,,,,,,28.777394282667352,b_estimator_sensitivity,welch1024_slope1.1,1024.0,1.1,variance_reduction,,,,,,,,,,,,,,
+,,,0.1870246130507319,673.0,,,,,,,18.70246130507319,b_estimator_sensitivity,welch128_slope0.7,128.0,0.7,variance_reduction,,,,,,,,,,,,,,
+,,,0.2194061568996216,673.0,,,,,,,21.940615689962158,b_estimator_sensitivity,welch128_slope0.9,128.0,0.9,variance_reduction,,,,,,,,,,,,,,
+,,,0.2528710155088345,673.0,,,,,,,25.28710155088345,b_estimator_sensitivity,welch128_slope1.1,128.0,1.1,variance_reduction,,,,,,,,,,,,,,
+,,,0.2065394953324343,673.0,,,,,,,20.65394953324343,b_estimator_sensitivity,welch256_slope0.7,256.0,0.7,variance_reduction,,,,,,,,,,,,,,
+,,,0.2368923969546279,673.0,,,,,,,23.689239695462792,b_estimator_sensitivity,welch256_slope0.9,256.0,0.9,variance_reduction,,,,,,,,,,,,,,
+,,,0.2637474409789101,673.0,,,,,,,26.37474409789101,b_estimator_sensitivity,welch256_slope1.1,256.0,1.1,variance_reduction,,,,,,,,,,,,,,
+,,,0.2025828696725277,673.0,,,,,,,20.25828696725277,b_estimator_sensitivity,welch512_slope0.7,512.0,0.7,variance_reduction,,,,,,,,,,,,,,
+,,,0.2394658493447027,673.0,,,,,,,23.94658493447027,b_estimator_sensitivity,welch512_slope0.9,512.0,0.9,variance_reduction,,,,,,,,,,,,,,
+,,,0.2736643138728876,673.0,,,,,,,27.36643138728876,b_estimator_sensitivity,welch512_slope1.1,512.0,1.1,variance_reduction,,,,,,,,,,,,,,
+,,,,,,,,,,,23.689239695462792,c_support_matched_bins,,,,,CAMELS-US,standard_axis_specific_support,log_spaced,84125.0,673.0,0.5153088770544795,0.3932361219970461,0.2368923969546279,24.0,24.0,16152.0,10220.0,,
+,,,,,,,,,,,27.32909932942027,c_support_matched_bins,,,,,CAMELS-US,standard_axis_specific_support,equal_count,84125.0,673.0,0.6266023703460881,0.4553575861537038,0.2732909932942027,24.0,24.0,16152.0,11036.0,,
+,,,,,,,,,,,20.602664022318958,c_support_matched_bins,,,,,CAMELS-US,same_point_central_support,log_spaced,76894.0,673.0,0.5565363702839348,0.4418750517523267,0.2060266402231896,24.0,24.0,15540.0,10037.0,,
+,,,,,,,,,,,25.09682550071288,c_support_matched_bins,,,,,CAMELS-US,same_point_central_support,equal_count,76894.0,673.0,0.639594436796716,0.4790765370815768,0.2509682550071288,24.0,24.0,15640.0,10653.0,,
+,,,,,,,,,,,14.69384257196944,c_support_matched_bins,,,,,CAMELS-GB v2,standard_axis_specific_support,log_spaced,83000.0,664.0,0.2756899084623408,0.2351804673260778,0.1469384257196944,24.0,24.0,15936.0,9401.0,,
+,,,,,,,,,,,27.70445853132661,c_support_matched_bins,,,,,CAMELS-GB v2,standard_axis_specific_support,equal_count,83000.0,664.0,0.3543046856899701,0.2561464909684453,0.2770445853132661,24.0,24.0,15936.0,10573.0,,
+,,,,,,,,,,,14.34907570233844,c_support_matched_bins,,,,,CAMELS-GB v2,same_point_central_support,log_spaced,75959.0,664.0,0.2865983387416134,0.2454741261539349,0.1434907570233844,24.0,24.0,15439.0,9134.0,,
+,,,,,,,,,,,28.695371320641772,c_support_matched_bins,,,,,CAMELS-GB v2,same_point_central_support,equal_count,75959.0,664.0,0.354591559596577,0.2528401948986845,0.2869537132064177,24.0,24.0,15483.0,10168.0,,
+,,,,,,,,,,,40.71791232366778,d_process_and_null_controls,,,,,,,,,,,,,,,,,linear_reservoir,process simulation
+,,,,,,,,,,,-1426.6623840968361,d_process_and_null_controls,,,,,,,,,,,,,,,,,nonlinear_concave_storage,process simulation
+,,,,,,,,,,,33.580147466374896,d_process_and_null_controls,,,,,,,,,,,,,,,,,nonlinear_convex_storage,process simulation
+,,,,,,,,,,,-63.487358573402645,d_process_and_null_controls,,,,,,,,,,,,,,,,,seasonal_forcing_control,process simulation
+,,,,,,,,,,,46.61090782494019,d_process_and_null_controls,,,,,,,,,,,,,,,,,ar1_fourier_pair,stochastic control
+,,,,,,,,,,,-96.97972209495124,d_process_and_null_controls,,,,,,,,,,,,,,,,,arma_positive_ma,stochastic control
+,,,,,,,,,,,-151.0462457513999,d_process_and_null_controls,,,,,,,,,,,,,,,,,arma_negative_ma,stochastic control
+,,,,,,,,,,,-177.32668422960631,d_process_and_null_controls,,,,,,,,,,,,,,,,,seasonal_ar1_control,stochastic control

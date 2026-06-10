@@ -1,0 +1,13 @@
+archive,proxy,partial_rank_rho_logtau,partial_q_value,proxy_group
+CAMELS-US,geol porosity,-0.0916846697351627,0.0237039806158444,independent geology/soil
+CAMELS-US,geol permeability,0.1063648915312727,0.011633694454209,independent geology/soil
+CAMELS-BR,geol porosity,0.0906518501747337,0.0067131741118107,independent geology/soil
+CAMELS-BR,geol permeability,0.1578473853428944,2.8480396738562875e-06,independent geology/soil
+CAMELS-BR,water-table depth,-0.2988772706771105,1.8551320585395253e-19,independent geology/soil
+CAMELS-BR,bedrock depth,0.2699299511241532,4.502570518934274e-16,independent geology/soil
+CAMELS-BR,sand fraction,0.3260664678218253,5.799331352234793e-23,independent geology/soil
+CAMELS-BR,clay fraction,-0.1828708159094701,5.95492399752336e-08,independent geology/soil
+CAMELS-AUS v2,soil saturated hydraulic conductivity,0.2727813909756454,1.5538763986865975e-10,independent_soil_proxy
+CAMELS-AUS v2,soil plant-available water holding capacity,0.2114157388439194,1.141978411608917e-06,independent_soil_proxy
+CAMELS-AUS v2,subsoil clay fraction,-0.1180636053413071,0.009271627278988,independent_soil_proxy
+CAMELS-AUS v2,valley-bottom flatness class 8,0.1231429992715902,0.0070298907830265,independent_topographic_valley_proxy

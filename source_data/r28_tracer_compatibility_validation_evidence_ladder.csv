@@ -1,0 +1,6 @@
+evidence_level,status,score,claim_boundary,support
+CAMELS-Chem all-solute passive-tracer screen,mixed_boundary,1.8,large-sample stream chemistry is CAMELS-linked but not transit-time causality,"partial rho=0.284, q=0.0051, n=141"
+CAMELS-Chem conservative/weathering solutes,counter_to_simple_damping,1.4,positive inverse-damping association is not the expected simple storage-damping proof,"partial rho=0.226, q=0.031, n=138"
+Plynlimon stable-isotope/chloride case study,direct_tracer_anchor,2.4,direct tracer damping exists in a classic catchment data set but is not linked to the CAMELS De archive,median stream/input SD ratio=0.127 across 3 stream sites
+CAMELS-CH-Chem stable-isotope expansion,candidate_deferred,1.0,download candidate identified; full archive not yet integrated,Zenodo README verified; 185 MB archive download timed out and requires resume
+direct tracer causality for De coordinate,not_closed,0.8,not claimed in the manuscript,no large-sample linked tracer transit-time data have been integrated

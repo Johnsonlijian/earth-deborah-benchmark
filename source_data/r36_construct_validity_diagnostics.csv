@@ -1,0 +1,9 @@
+diagnostic_family,archive,n_gauges,n_curve_points,spearman_log_frequency_log_tau,spearman_beta_log_tau,spearman_beta_log_frequency,spearman_beta_log_de,de_window_points,de_window_frequency_iqr_log10,de_window_tau_iqr_log10,interpretation,variance_reduction_vs_raw,comparison_reduction_vs_raw
+coordinate_support,CAMELS-US,673.0,84125.0,0.0,0.38592728520068165,0.4138323368699554,0.5872767626159341,31056.0,0.419129307741976,0.37687361738996916,frequency and tau support for De bins; not independent causal proof,,
+coordinate_support,CAMELS-GB,664.0,83000.0,0.0,0.43230790256425866,0.3197533875712331,0.5437774963927037,29300.0,0.3979400086720377,0.33865526484172215,frequency and tau support for De bins; not independent causal proof,,
+coordinate_support,CAMELS-BR,893.0,111625.0,0.0,0.2888892661003657,0.22472040223558604,0.3988832388898375,12964.0,0.5383909114585855,0.5082465063742957,frequency and tau support for De bins; not independent causal proof,,
+coordinate_support,CAMELS-AUS,560.0,70000.0,0.0,0.347475765042024,0.5257795522042852,0.6307824712685145,26246.0,0.3979400086720377,0.3411949550241262,frequency and tau support for De bins; not independent causal proof,,
+coordinate_support,CAMELS-DK,220.0,27500.0,0.0,0.14440415456221858,0.41482391653077744,0.43786747481848187,2588.0,0.327358934386331,0.2531063805121223,frequency and tau support for De bins; not independent causal proof,,
+seasonality_control,synthetic_fourier_pair,,,,,,,,,,seasonal AR(1) without anomaly removal worsens De dispersion,-1.7732668422960631,0.4661090782494019
+seasonality_control,synthetic_storage_release,,,,,,,,,,strong seasonal forcing in storage simulation worsens De dispersion,-0.6348735857340264,0.4071791232366778
+seasonality_control,r36_dayofyear_anomaly,,,,,,,,,,annual component is added before day-of-year anomaly removal; result remains a boundary control,0.5957104061839522,0.6166578954547237

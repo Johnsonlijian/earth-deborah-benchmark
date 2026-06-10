@@ -1,0 +1,5 @@
+archive,forcing_product,analysis,n_gauges,raw_weighted_beta_variance,de_weighted_beta_variance,variance_reduction_fraction,raw_n_bins,de_n_bins,raw_n_unit_bin_pairs,de_n_unit_bin_pairs,p_value,variance_reduction_percent
+CAMELS-GB v2,CEH-GEAR,precipitation_beta_on_precipitation_memory,671,0.00803178393737839,0.008525587031905296,-0.06148112279624951,24.0,24.0,16104.0,13660.0,,-6.148112279624951
+CAMELS-GB v2,CEH-GEAR,q_minus_p_beta_contrast_on_q_memory,664,0.2723220144513769,0.22023232007143104,0.19127977767381876,24.0,24.0,15936.0,9401.0,,19.127977767381875
+CAMELS-GB v2,CEH-GEAR,q_minus_p_beta_contrast_on_p_memory,664,0.2723220144513769,0.29432285482437365,-0.08078979739232572,24.0,24.0,15936.0,13516.0,,-8.078979739232572
+CAMELS-GB v2,CEH-GEAR,tau_q_tau_p_spearman,664,,,-0.48179117312990266,,,,,6.885567855442005e-40,-48.179117312990265

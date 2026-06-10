@@ -1,0 +1,6 @@
+analysis,script,seed_or_determinism,notes
+matched_ar1_ensemble,scripts/run_r33_matched_ar1_ensemble.py,20260604,US/GB 100-draw stochastic artifact floor
+open_model_intercomparison,scripts/run_r39_open_model_intercomparison.py,20260608,CAMELS-GB GR4J/HBV-Edu/global-LSTM diagnostic split and initialization
+model_consequence_diagnostic,scripts/run_final_model_consequence_diagnostic.py,44 plus row-specific offsets,Bootstrap Spearman intervals for Fig. 5 diagnostic
+all_archive_analytic_ar1,scripts/run_final_all_archive_ar1_floor.py,deterministic,Analytic companion check; not a stochastic floor
+figure_generation,various scripts,deterministic unless noted,Generated from derived source-data CSVs

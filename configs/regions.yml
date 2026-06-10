@@ -1,0 +1,16 @@
+regions:
+  global:
+    description: "Global first-pass domain where supported by the source catalog."
+    bounds: null
+
+  example_plate_boundary:
+    description: "Placeholder for a plate-boundary sensitivity subset."
+    bounds:
+      minlatitude: null
+      maxlatitude: null
+      minlongitude: null
+      maxlongitude: null
+
+  example_river_group:
+    description: "Placeholder for a hydrologic-mechanism river group."
+    station_ids: []

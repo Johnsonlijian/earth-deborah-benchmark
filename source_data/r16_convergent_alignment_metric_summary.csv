@@ -1,0 +1,11 @@
+archive,metric,raw_value,memory_coordinate_value,reduction_vs_raw,direction
+CAMELS-GB,mean_abs_curve_distance,0.3663308023275144,0.33606778406092386,0.08261117567595155,positive means tighter De alignment
+CAMELS-GB,median_abs_curve_distance,0.24587499160627757,0.22340122647403393,0.09140321667293083,positive means tighter De alignment
+CAMELS-GB,rmse_curve_distance,0.5387626715110715,0.4878261159313695,0.09454358713613153,positive means tighter De alignment
+CAMELS-GB,weighted_iqr_width,0.5684091222654893,0.5406555475740252,0.048826758059138164,positive means tighter De alignment
+CAMELS-GB,weighted_tail_width_90_10,1.1792074090602749,1.0849364407502189,0.07994434870891942,positive means tighter De alignment
+CAMELS-US,mean_abs_curve_distance,0.5386559259421501,0.46971846515879717,0.12798051123781107,positive means tighter De alignment
+CAMELS-US,median_abs_curve_distance,0.39563733847424726,0.3603192034177446,0.08926896332056278,positive means tighter De alignment
+CAMELS-US,rmse_curve_distance,0.7216862541967984,0.6235443821899006,0.13598966508808585,positive means tighter De alignment
+CAMELS-US,weighted_iqr_width,0.9097865336035681,0.8100015905526996,0.10967951202314563,positive means tighter De alignment
+CAMELS-US,weighted_tail_width_90_10,1.7922117802052806,1.4974292000091223,0.16447976932859676,positive means tighter De alignment

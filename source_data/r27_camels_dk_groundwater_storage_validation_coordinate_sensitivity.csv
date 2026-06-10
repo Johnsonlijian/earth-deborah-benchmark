@@ -1,0 +1,6 @@
+coordinate,label,n_gauges,raw_weighted_beta_variance,de_weighted_beta_variance,variance_reduction_fraction,raw_n_bins,de_n_bins
+tau_acf_days,observed discharge tau,220,0.27597536292629077,0.29043310222902663,-0.05238778979918336,24,24
+DKM_dtp_tau_days,DK-model phreatic-depth tau,219,0.2764523750072045,0.3119205916007066,-0.12829774601349622,24,23
+DKM_wcr_tau_days,DK-model soil-water tau,219,0.2764523750072045,0.26373672600549464,0.0459958030795665,24,24
+DKM_gwh_tau_days,DK-model deep-groundwater-head tau,219,0.2764523750072045,0.3808574817880762,-0.3776603719832426,24,24
+Qdkm_tau_days,DK-model runoff tau,220,0.27597536292629077,0.3107276130732376,-0.12592519048966222,24,23

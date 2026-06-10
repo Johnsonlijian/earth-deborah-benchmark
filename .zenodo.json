@@ -1,0 +1,29 @@
+{
+  "title": "A null-calibrated spectral-memory benchmark for hydrological model timescale diagnostics: reproducibility package",
+  "upload_type": "software",
+  "description": "Code, configuration, derived non-sensitive source data, generated figures and runbook for the HESS-targeted streamflow spectral-memory benchmark study. Raw third-party CAMELS-family, groundwater, chemistry and tracer datasets are not redistributed.",
+  "creators": [
+    {
+      "name": "Ren, Lijian",
+      "affiliation": "School of Civil Engineering, Inner Mongolia University of Technology",
+      "orcid": "0000-0003-1629-4368"
+    }
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": [
+    "hydrology",
+    "streamflow",
+    "spectral analysis",
+    "model diagnostics",
+    "CAMELS",
+    "benchmark"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Johnsonlijian/earth-deborah-benchmark",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "earth-deborah-benchmark"
+version = "0.1.0"
+description = "Reproducible benchmark for memory-normalized streamflow spectral-slope analysis."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.1",
+  "scipy>=1.11",
+  "statsmodels>=0.14",
+  "matplotlib>=3.8",
+  "scikit-learn>=1.4",
+  "geopandas>=0.14",
+  "shapely>=2.0",
+  "pyproj>=3.6",
+  "fiona>=1.9",
+  "pydantic>=2",
+  "pyyaml>=6",
+  "requests>=2.31",
+  "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+]
+model = [
+  "torch>=2",
+  "rrmpg @ git+https://github.com/kratzert/RRMPG.git@7de78c25acc1c255d2acaf739d65e9ce7bbd60c3",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"

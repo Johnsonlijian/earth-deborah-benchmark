@@ -1,0 +1,5 @@
+archive,region,n_gauges,median_tau_acf_days,median_aridity,variance_reduction_fraction,evidence_class
+CAMELS-US,United States,673,8.721251598469241,0.855149970177677,0.2368923969546279,temperate-to-arid benchmark origin
+CAMELS-GB v2,Great Britain,664,10.02878261412064,0.56,0.1469384257196944,temperate replication
+CAMELS-BR v1.2,Brazil,893,38.15328958232152,0.72669,0.122390153737815,tropical replication
+CAMELS-AUS v2,Australia,560,8.636153967037737,1.362092,0.0643230160330537,dry-continent boundary replication
