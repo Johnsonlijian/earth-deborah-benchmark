@@ -622,8 +622,10 @@ def fig5_models() -> Path:
     metrics = read_csv("r39_open_model_intercomparison_metrics.csv")
     ranks = read_csv("r39_open_model_intercomparison_rank_disagreement.csv")
 
-    fig = plt.figure(figsize=(7.4, 5.4), constrained_layout=True)
-    gs = gridspec.GridSpec(2, 2, figure=fig)
+    fig = plt.figure(figsize=(7.8, 5.35), constrained_layout=True)
+    outer = gridspec.GridSpec(2, 1, figure=fig, height_ratios=[1.0, 1.05])
+    top = outer[0].subgridspec(1, 2, width_ratios=[1.0, 1.0], wspace=0.30)
+    bottom = outer[1].subgridspec(1, 2, width_ratios=[1.28, 0.92], wspace=0.34)
     short = {
         "rrmpg_gr4j": "GR4J",
         "rrmpg_hbvedu": "HBV-Edu",
@@ -633,7 +635,7 @@ def fig5_models() -> Path:
         "lagged_q_lower_bound": "lagged Q",
     }
 
-    ax = fig.add_subplot(gs[0, 0])
+    ax = fig.add_subplot(top[0, 0])
     panel_label(ax, "a")
     plot_metrics = metrics.dropna(subset=["eval_nse", "beta_de_median_abs_distance"]).copy()
     for mt, g in plot_metrics.groupby("model_type"):
@@ -652,7 +654,7 @@ def fig5_models() -> Path:
         lh.set_alpha(0.9)
     clean_axis(ax)
 
-    ax = fig.add_subplot(gs[0, 1])
+    ax = fig.add_subplot(top[0, 1])
     panel_label(ax, "b")
     order = summary.sort_values("median_beta_de_distance")["model_type"].tolist()
     data = [plot_metrics.loc[plot_metrics["model_type"] == mt, "beta_de_median_abs_distance"].dropna().clip(lower=1e-3).values for mt in order]
@@ -670,7 +672,7 @@ def fig5_models() -> Path:
     ax.tick_params(axis="x", rotation=0)
     clean_axis(ax)
 
-    ax = fig.add_subplot(gs[1, 0])
+    ax = fig.add_subplot(bottom[0, 0])
     panel_label(ax, "c")
     common = pd.crosstab(ranks["best_nse_model"], ranks["best_beta_model"])
     all_models = order
@@ -689,29 +691,31 @@ def fig5_models() -> Path:
             if v:
                 ax.text(j, i, str(v), ha="center", va="center", fontsize=6.5,
                         color="white" if v > 0.62 * vmax else PALETTE["dark"])
-    fig.colorbar(im, ax=ax, fraction=0.046, pad=0.02).set_label("# gauges")
+    fig.colorbar(im, ax=ax, fraction=0.034, pad=0.018).set_label("# gauges")
 
-    ax = fig.add_subplot(gs[1, 1])
+    ax = fig.add_subplot(bottom[0, 1])
     panel_label(ax, "d")
     s = summary.copy()
     ax.scatter(s["median_eval_nse"], s["median_beta_de_distance"], s=42,
                color=[MODEL_COLORS.get(mt, PALETTE["gray"]) for mt in s["model_type"]],
                edgecolor="white", lw=0.5, zorder=3)
     offsets = {
-        "rrmpg_gr4j": (-7, 5, "right"),
-        "rrmpg_hbvedu": (7, 5, "left"),
-        "global_lstm": (7, -9, "left"),
-        "seasonal_climatology": (7, 4, "left"),
-        "seasonal_ar1_null": (7, 4, "left"),
-        "lagged_q_lower_bound": (-7, 4, "right"),
+        "rrmpg_gr4j": (-9, 10, "right"),
+        "rrmpg_hbvedu": (7, 9, "left"),
+        "global_lstm": (7, -12, "left"),
+        "seasonal_climatology": (7, 11, "left"),
+        "seasonal_ar1_null": (7, 3, "left"),
+        "lagged_q_lower_bound": (-7, 6, "right"),
     }
     for _, row in s.iterrows():
         dx, dy, ha = offsets.get(row["model_type"], (7, 4, "left"))
         ax.annotate(short.get(row["model_type"], row["model_label"]),
                     (row["median_eval_nse"], row["median_beta_de_distance"]),
-                    xytext=(dx, dy), textcoords="offset points", ha=ha, va="center", fontsize=6.6)
+                    xytext=(dx, dy), textcoords="offset points", ha=ha, va="center", fontsize=6.2)
     ax.axvline(0, color=PALETTE["gray"], lw=0.8, ls="--")
     ax.set_yscale("log")
+    ax.set_xlim(-0.20, 0.56)
+    ax.set_ylim(1.2e-3, 1.35)
     ax.set_xlabel("Median NSE")
     ax.set_ylabel(r"Median $\beta(\mathrm{De})$ distance")
     ax.set_title("Model-summary trade-off", loc="left")

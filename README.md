@@ -153,7 +153,7 @@ regeneration scripts.
 
 ## Current Prepared Artifacts
 
-The current package round is R56-HESS-final-hardcheck, dated 2026-06-11.
+The current package round is R58-HESS-figure-5c-balance, dated 2026-06-11.
 
 | Artifact | Path | Notes |
 | --- | --- | --- |
