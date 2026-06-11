@@ -3,7 +3,7 @@
 R58 is a HESS submission-figure polish release focused on the final
 model-diagnostic figure.
 
-Increment relative to R56_HESS:
+Final HESS-facing increment:
 
 - Rebalanced Fig. 5 so the rank-disagreement heatmap panel receives more
   horizontal space.
