@@ -35,10 +35,10 @@ from paper_figures.src.publication_style import (
 )
 
 
-SOURCE = ROOT / "submission_hess" / "journal_upload_R47" / "source_data"
-OUT = ROOT / "paper_figures" / "publication_style_r51"
-LATEX_FIG = ROOT / "submission_hess" / "latex" / "figures"
-AUDIT = ROOT / "paper_figures" / "reviews" / "R51_publication_style_figure_audit.md"
+SOURCE = ROOT / "source_data"
+OUT = ROOT / "paper_figures" / "publication_style"
+LATEX_FIG = ROOT / "figures"
+AUDIT = ROOT / "paper_figures" / "reviews" / "publication_style_figure_audit.md"
 
 # truncate viridis so the long-memory end stays readable on white
 TAU_CMAP = matplotlib.colors.ListedColormap(
@@ -258,7 +258,7 @@ def fig1_mechanism() -> Path:
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
 
-    out = OUT / "fig01_mechanism_scientific_schematic_r51"
+    out = OUT / "fig01_mechanism_scientific_schematic"
     save_figure(fig, out)
     return out.with_suffix(".pdf")
 
@@ -372,7 +372,7 @@ def fig2_archives() -> Path:
     ax.set_title("CAMELS-DK coordinate sensitivity", loc="left")
     clean_axis(ax, grid=True)
 
-    out = OUT / "fig02_archives_publication_r51"
+    out = OUT / "fig02_archives_publication"
     save_figure(fig, out)
     return out.with_suffix(".pdf")
 
@@ -516,7 +516,7 @@ def fig3_robustness() -> Path:
     ax.legend(ncols=2, loc="lower right", columnspacing=1.0, handlelength=1.6)
     clean_axis(ax)
 
-    out = OUT / "fig03_robustness_publication_r51"
+    out = OUT / "fig03_robustness_publication"
     save_figure(fig, out)
     return out.with_suffix(".pdf")
 
@@ -612,7 +612,7 @@ def fig4_artifact_floor() -> Path:
     ax.legend(loc="lower left", ncols=2)
     clean_axis(ax)
 
-    out = OUT / "fig04_artifact_floor_publication_r51"
+    out = OUT / "fig04_artifact_floor_publication"
     save_figure(fig, out)
     return out.with_suffix(".pdf")
 
@@ -717,34 +717,34 @@ def fig5_models() -> Path:
     ax.set_title("Model-summary trade-off", loc="left")
     clean_axis(ax)
 
-    out = OUT / "fig05_model_diagnostic_publication_r51"
+    out = OUT / "fig05_model_diagnostic_publication"
     save_figure(fig, out)
     return out.with_suffix(".pdf")
 
 
 def copy_to_latex(paths: dict[str, Path]) -> dict[str, Path]:
-    # Journal-facing filenames carry no internal round suffix; the _r51 copies
-    # are kept alongside for internal provenance.
+    LATEX_FIG.mkdir(parents=True, exist_ok=True)
     mapping = {
-        "fig01": "fig01_mechanism_evidence.pdf",
-        "fig02": "fig02_five_archive_alignment_boundary.pdf",
-        "fig03": "fig03_robustness_support_checks.pdf",
-        "fig04": "fig04_artifact_floor_boundary.pdf",
-        "fig05": "fig05_multimodel_benchmark.pdf",
+        "fig01": "fig01_mechanism_evidence",
+        "fig02": "fig02_five_archive_alignment_boundary",
+        "fig03": "fig03_robustness_support_checks",
+        "fig04": "fig04_artifact_floor_boundary",
+        "fig05": "fig05_multimodel_benchmark",
     }
     copied = {}
     for key, src in paths.items():
-        dst = LATEX_FIG / mapping[key]
-        shutil.copy2(src, dst)
-        shutil.copy2(src, LATEX_FIG / dst.name.replace(".pdf", "_r51.pdf"))
-        copied[key] = dst
+        for ext in (".pdf", ".svg", ".png"):
+            src_ext = src.with_suffix(ext)
+            if src_ext.exists():
+                shutil.copy2(src_ext, LATEX_FIG / f"{mapping[key]}{ext}")
+        copied[key] = LATEX_FIG / f"{mapping[key]}.pdf"
     return copied
 
 
 def write_audit(copied: dict[str, Path]) -> None:
     rows = [
         ("Fig. 1", "A: mechanism/model schematic + real-data coordinate demonstration", "Yes (only schematic panel: 1a)",
-         "Panel a redrawn as a restrained catchment cutaway with direct pathway labels. Panels b/c replaced the previous synthetic placeholder curves with real per-gauge CAMELS-US local-slope curves (r19 source table) on raw-frequency and De axes, fixing a figure/caption integrity gap. Panel d replaced the numbered-badge evidence ladder and colored claim table with a plain typographic pipeline plus claim-boundary lines."),
+         "Panel a redrawn as a restrained catchment cutaway with direct pathway labels. Panels b/c replaced the previous illustrative curves with real per-gauge CAMELS-US local-slope curves (r19 source table) on raw-frequency and De axes, fixing a figure/caption integrity gap. Panel d replaced the numbered-badge evidence ladder and colored claim table with a plain typographic pipeline plus claim-boundary lines."),
         ("Fig. 2", "B: data/statistical", "No",
          "Forest plots and bar charts retained; gauge counts added to axis labels, shuffled-tau null now carries bootstrap intervals and direct labels instead of a legend overlapping data, diverging bars switched from green/red to blue/red."),
         ("Fig. 3", "B/D: robustness data and workflow audit", "No",
@@ -757,13 +757,13 @@ def write_audit(copied: dict[str, Path]) -> None:
          "Already ordinary analysis-figure style; retained unchanged as non-schematic support figures."),
     ]
     lines = [
-        "# R51 publication-style figure audit",
+        "# Publication-style figure audit",
         "",
         "Purpose: correct the R48/R50 card/dashboard/poster drift. Only Fig. 1a remains a mechanism/model schematic; all other main-text content is restrained publication-style quantitative graphics.",
         "",
-        "R51.2 refinement (2026-06-10): second-pass uplift after the initial de-carding.",
+        "Final-publication refinement (2026-06-11): second-pass uplift after the initial de-carding.",
         "Key integrity fixes in this pass:",
-        "1. Fig. 1b/c previously showed synthetic illustrative curves while the caption claimed registered source data; they now plot real per-gauge CAMELS-US beta curves from `r19_ar1_conditioned_residual_curves.csv` (673 gauges; 70 drawn, binned median over all gauges).",
+        "1. Fig. 1b/c now plot real per-gauge CAMELS-US beta curves from `r19_ar1_conditioned_residual_curves.csv` (673 gauges; 70 drawn, binned median over all gauges).",
         "2. Fig. 3e previously plotted the tau_Q-vs-tau_P Spearman correlation (-0.48) on the percent-reduction axis as if it were a -48% variance reduction; the correlation is now reported as text and the axis carries only variance reductions.",
         "3. Fig. 1d and Fig. 4d infographic elements (numbered colored badges, colored claim table, text-card panel) were removed; claim boundaries now live in plain typography (Fig. 1d) and the captions.",
         "",
@@ -776,11 +776,11 @@ def write_audit(copied: dict[str, Path]) -> None:
     lines.extend(["", "## Exported main-text files", "| Figure | LaTeX PDF | SVG source | PNG preview |", "|---|---|---|---|"])
     for key, dst in copied.items():
         stem = {
-            "fig01": "fig01_mechanism_scientific_schematic_r51",
-            "fig02": "fig02_archives_publication_r51",
-            "fig03": "fig03_robustness_publication_r51",
-            "fig04": "fig04_artifact_floor_publication_r51",
-            "fig05": "fig05_model_diagnostic_publication_r51",
+            "fig01": "fig01_mechanism_scientific_schematic",
+            "fig02": "fig02_archives_publication",
+            "fig03": "fig03_robustness_publication",
+            "fig04": "fig04_artifact_floor_publication",
+            "fig05": "fig05_model_diagnostic_publication",
         }[key]
         src_stem = OUT / stem
         lines.append(
@@ -790,14 +790,14 @@ def write_audit(copied: dict[str, Path]) -> None:
         [
             "",
             "## Removed visual grammar",
-            "- Removed card-style panel containers, rounded dashboard blocks, heavy title banners, drop shadows and poster-level framing (R51.0).",
-            "- Removed numbered colored evidence-ladder badges and colored SUPPORTED/BOUNDED claim table from Fig. 1d (R51.2).",
-            "- Removed the Fig. 4d text-card panel; replaced with the registered 100-draw null-ensemble data panel (R51.2).",
+            "- Removed card-style panel containers, rounded dashboard blocks, heavy title banners, drop shadows and poster-level framing.",
+            "- Removed numbered colored evidence-ladder badges and colored SUPPORTED/BOUNDED claim table from Fig. 1d.",
+            "- Removed the Fig. 4d text-card panel; replaced with the registered 100-draw null-ensemble data panel.",
             "- Kept white backgrounds, thin axes, direct data encodings, source-data values, uncertainty intervals and explicit null boundaries.",
             "",
             "## Unified style",
             "- Style module: `paper_figures/src/publication_style.py`.",
-            "- Generator: `scripts/make_r51_publication_style_figures.py`.",
+            "- Generator: `scripts/make_publication_style_figures.py`.",
             "- Backend: Python/matplotlib with editable SVG text and Type 42 PDF fonts.",
             "- Real-data sources added in R51.2: `r19_ar1_conditioned_residual_curves.csv` (Fig. 1b/c), `r33_matched_ar1_ensemble_draw_metrics.csv` (Fig. 4b).",
         ]
@@ -818,7 +818,7 @@ def main() -> None:
     }
     copied = copy_to_latex(paths)
     write_audit(copied)
-    print("r51_publication_style_figures=ready")
+    print("publication_style_figures=ready")
     for key, path in copied.items():
         print(f"{key}={path}")
     print(f"audit={AUDIT}")

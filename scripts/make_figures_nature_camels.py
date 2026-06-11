@@ -1,4 +1,4 @@
-"""Nature-style figures for the CAMELS Deborah-number manuscript.
+"""Publication-style figures for the CAMELS Deborah-number manuscript.
 
 The script builds a first submission-grade figure set from the 673-station
 CAMELS diagnostics and the cross-process control tables. It deliberately uses

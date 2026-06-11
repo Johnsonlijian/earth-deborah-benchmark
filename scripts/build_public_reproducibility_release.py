@@ -43,7 +43,7 @@ FIGURE_KEEP = [
     "fig02_five_archive_alignment_boundary",
     "fig03_robustness_support_checks",
     "fig04_artifact_floor_boundary",
-    "fig05_model_consequence_diagnostic",
+    "fig05_multimodel_benchmark",
     "r33_matched_ar1_ensemble",
     "r36_multiscale_process_family_nulls",
     "r37_artifact_floor_boundary",
@@ -199,7 +199,7 @@ def write_release_metadata(tag: str) -> None:
         "analysis,script,seed_or_determinism,notes",
         "matched_ar1_ensemble,scripts/run_r33_matched_ar1_ensemble.py,20260604,US/GB 100-draw stochastic artifact floor",
         "open_model_intercomparison,scripts/run_r39_open_model_intercomparison.py,20260608,CAMELS-GB GR4J/HBV-Edu/global-LSTM diagnostic split and initialization",
-        "model_consequence_diagnostic,scripts/run_final_model_consequence_diagnostic.py,44 plus row-specific offsets,Bootstrap Spearman intervals for Fig. 5 diagnostic",
+        "model_ensemble_sensitivity,scripts/run_final_model_ensemble_hardening.py,20260608 plus analysis-level deterministic summaries,Seasonal AR(1) draw uncertainty, five-seed LSTM sensitivity and RRMPG budget audit",
         "all_archive_analytic_ar1,scripts/run_final_all_archive_ar1_floor.py,deterministic,Analytic companion check; not a stochastic floor",
         "figure_generation,various scripts,deterministic unless noted,Generated from derived source-data CSVs",
     ]
@@ -275,7 +275,7 @@ def make_zip(tag: str) -> Path:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--tag", default="R54_HESS")
+    parser.add_argument("--tag", default="R56_HESS")
     args = parser.parse_args()
 
     reset_out()

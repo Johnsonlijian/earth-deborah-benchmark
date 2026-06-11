@@ -1,4 +1,4 @@
-"""CAMELS diagnostics for the Nature-level manuscript sprint.
+"""CAMELS diagnostics for the streamflow spectral-memory benchmark.
 
 This script turns the 673-station summary table into manuscript-ready
 diagnostics:

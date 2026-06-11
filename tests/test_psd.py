@@ -54,7 +54,7 @@ def test_synthetic_powerlaw_slope_recovers_five_thirds() -> None:
     assert abs(recovered - beta_true) < 0.35
 
 
-def test_multitaper_placeholder() -> None:
+def test_multitaper_not_enabled_in_release() -> None:
     try:
         multitaper_psd()
     except NotImplementedError:
