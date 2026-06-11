@@ -85,9 +85,11 @@ python scripts/run_final_model_ensemble_hardening.py --ar1-draws 50 --rrmpg-samp
 Expected minimal outputs:
 
 - `reports/tables/r33_null_calibrated_ensemble_summary.csv`
-- `reports/figures/fig5_artifact_floor_boundary.{pdf,png,svg}`
-- `reports/figures/fig2_five_archive_alignment_boundary.{pdf,png,svg}`
-- `reports/figures/fig4_robustness_support_checks.{pdf,png,svg}`
+- `figures/fig01_mechanism_evidence.{pdf,png,svg}`
+- `figures/fig02_five_archive_alignment_boundary.{pdf,png,svg}`
+- `figures/fig03_robustness_support_checks.{pdf,png,svg}`
+- `figures/fig04_artifact_floor_boundary.{pdf,png,svg}`
+- `figures/fig05_multimodel_benchmark.{pdf,png,svg}`
 - `reports/tables/r39_open_model_intercomparison_summary.csv`
 - `reports/figures/r39_open_model_intercomparison.{pdf,png,svg}`
 - `reports/tables/final_extreme_hardening_cluster_bootstrap_summary.csv`
@@ -151,7 +153,7 @@ regeneration scripts.
 
 ## Current Prepared Artifacts
 
-The current package round is R54-HESS-target, dated 2026-06-10.
+The current package round is R55-HESS-final-hardcheck, dated 2026-06-11.
 
 | Artifact | Path | Notes |
 | --- | --- | --- |
