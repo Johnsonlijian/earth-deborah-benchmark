@@ -164,7 +164,7 @@ engine as the latest package verification pass, then run the author-workspace
 clean scans before uploading.
 
 The clean public reproducibility release intentionally excludes active
-submission manuscripts, cover letters and reviewer-facing drafts. It retains
+submission manuscripts, cover letters and response-to-reviewer files. It retains
 the code, dataset registry, derived source data and generated figures needed to
 audit and regenerate the non-sensitive outputs.
 
@@ -172,9 +172,9 @@ audit and regenerate the non-sensitive outputs.
 
 Before pushing to GitHub or minting Zenodo DOI:
 
-- keep `submission_*`, `rounds/`, `logs/`, `paper_attack/`,
-  `multi_model_review/`, cover letters and reviewer drafts out of the public
-  repository;
+- keep submission-system files, working notes, local run traces, paper-attack
+  notes, multi-model review notes, cover letters and response-to-reviewer files
+  out of the public repository;
 - confirm that `DATASETS_AND_LINKS.csv` lists every raw dataset source used by
   the manuscript;
 - run `python -m pytest`;

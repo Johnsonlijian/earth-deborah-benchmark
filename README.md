@@ -38,9 +38,9 @@ This repository is intended to be the clean public reproducibility route. It may
 contain code, configuration, derived non-sensitive tables, generated figures,
 source-data indexes, dataset links, licenses and runbooks.
 
-It must not contain raw third-party data archives, credentials, active
-submission manuscripts, cover letters, reviewer-response drafts, internal
-rounds, private author/funding files or unclear-redistribution material.
+It must not contain raw third-party data archives, credentials, submission
+manuscripts, cover letters, response-to-reviewer files, working-round notes,
+private author/funding files or unclear-redistribution material.
 
 Raw public datasets should be obtained from the official sources listed in
 `DATASETS_AND_LINKS.csv` and `source_data/dataset_registry.csv` in the public

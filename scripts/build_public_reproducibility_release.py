@@ -275,7 +275,7 @@ def make_zip(tag: str) -> Path:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--tag", default="R56_HESS")
+    parser.add_argument("--tag", default="R58_HESS")
     args = parser.parse_args()
 
     reset_out()
