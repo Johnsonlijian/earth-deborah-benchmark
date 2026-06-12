@@ -153,7 +153,7 @@ regeneration scripts.
 
 ## Current Prepared Artifacts
 
-The current package round is R58-HESS-figure-5c-balance, dated 2026-06-11.
+The current package round is R59-HESS-figure-5c-readability, dated 2026-06-12.
 
 | Artifact | Path | Notes |
 | --- | --- | --- |

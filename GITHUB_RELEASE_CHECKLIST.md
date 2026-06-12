@@ -1,7 +1,7 @@
 # GitHub release checklist
 
 Intended repository: https://github.com/Johnsonlijian/earth-deborah-benchmark
-Recommended release tag: R58_HESS
+Recommended release tag: R59_HESS
 
 1. Push this release-ready directory only; do not push raw data, submission manuscripts, cover letters, rounds or logs.
 2. Create a GitHub release using the same tag.

@@ -622,10 +622,10 @@ def fig5_models() -> Path:
     metrics = read_csv("r39_open_model_intercomparison_metrics.csv")
     ranks = read_csv("r39_open_model_intercomparison_rank_disagreement.csv")
 
-    fig = plt.figure(figsize=(7.8, 5.35), constrained_layout=True)
+    fig = plt.figure(figsize=(8.05, 5.35), constrained_layout=True)
     outer = gridspec.GridSpec(2, 1, figure=fig, height_ratios=[1.0, 1.05])
     top = outer[0].subgridspec(1, 2, width_ratios=[1.0, 1.0], wspace=0.30)
-    bottom = outer[1].subgridspec(1, 2, width_ratios=[1.28, 0.92], wspace=0.34)
+    bottom = outer[1].subgridspec(1, 2, width_ratios=[1.55, 0.90], wspace=0.27)
     short = {
         "rrmpg_gr4j": "GR4J",
         "rrmpg_hbvedu": "HBV-Edu",
@@ -677,8 +677,8 @@ def fig5_models() -> Path:
     common = pd.crosstab(ranks["best_nse_model"], ranks["best_beta_model"])
     all_models = order
     common = common.reindex(index=all_models, columns=all_models, fill_value=0)
-    im = ax.imshow(common.values, cmap="Blues")
-    ax.set_xticks(np.arange(len(all_models)), [short.get(m, m) for m in all_models], rotation=35, ha="right")
+    im = ax.imshow(common.values, cmap="Blues", aspect="auto")
+    ax.set_xticks(np.arange(len(all_models)), [short.get(m, m) for m in all_models], rotation=28, ha="right")
     ax.set_yticks(np.arange(len(all_models)), [short.get(m, m) for m in all_models])
     ax.set_xlabel("Best by spectral-memory distance")
     ax.set_ylabel("Best by NSE")
@@ -691,7 +691,7 @@ def fig5_models() -> Path:
             if v:
                 ax.text(j, i, str(v), ha="center", va="center", fontsize=6.5,
                         color="white" if v > 0.62 * vmax else PALETTE["dark"])
-    fig.colorbar(im, ax=ax, fraction=0.034, pad=0.018).set_label("# gauges")
+    fig.colorbar(im, ax=ax, fraction=0.026, pad=0.012).set_label("# gauges")
 
     ax = fig.add_subplot(bottom[0, 1])
     panel_label(ax, "d")
@@ -700,11 +700,11 @@ def fig5_models() -> Path:
                color=[MODEL_COLORS.get(mt, PALETTE["gray"]) for mt in s["model_type"]],
                edgecolor="white", lw=0.5, zorder=3)
     offsets = {
-        "rrmpg_gr4j": (-9, 10, "right"),
+        "rrmpg_gr4j": (6, 13, "left"),
         "rrmpg_hbvedu": (7, 9, "left"),
         "global_lstm": (7, -12, "left"),
-        "seasonal_climatology": (7, 11, "left"),
-        "seasonal_ar1_null": (7, 3, "left"),
+        "seasonal_climatology": (-8, 12, "right"),
+        "seasonal_ar1_null": (7, 8, "left"),
         "lagged_q_lower_bound": (-7, 6, "right"),
     }
     for _, row in s.iterrows():
