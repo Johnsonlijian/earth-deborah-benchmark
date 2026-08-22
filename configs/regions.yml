@@ -4,7 +4,7 @@ regions:
     bounds: null
 
   example_plate_boundary:
-    description: "Placeholder for a plate-boundary sensitivity subset."
+    description: "Optional plate-boundary sensitivity template; provide verified bounds before enabling."
     bounds:
       minlatitude: null
       maxlatitude: null
@@ -12,5 +12,5 @@ regions:
       maxlongitude: null
 
   example_river_group:
-    description: "Placeholder for a hydrologic-mechanism river group."
+    description: "Optional river-group template; provide verified station identifiers before enabling."
     station_ids: []

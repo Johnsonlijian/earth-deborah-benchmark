@@ -1,7 +1,10 @@
 # Public Reproducibility Release Contents
 
-This bundle is prepared for a public GitHub/Zenodo-style reproducibility release.
-It intentionally excludes active submission manuscripts, cover letters, internal review rounds, logs, raw third-party datasets and downloaded archives.
+This repository is prepared as a public software and reproducibility release
+supporting an ESSD data-description manuscript. It intentionally excludes
+active or rejected manuscripts, cover letters, reviewer material, submission
+records, private workflow rounds and logs, raw third-party data, credentials,
+and downloaded archives.
 
 Included:
 
@@ -11,4 +14,9 @@ Included:
 - generated publication figures;
 - license and citation metadata.
 
-Human-only before DOI finalization: confirm Zenodo account authorization or GitHub-Zenodo integration, then record the minted archival DOI.
+The 2026-08-22 update additionally includes the released R62 decision-test
+tables, its public scientific protocol transcription, and deterministic ESSD
+figure scripts and outputs under `figures/essd/`.
+
+No new dataset DOI is asserted here. DOI metadata must be updated only after a
+real archival record has been minted and verified.

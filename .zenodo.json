@@ -1,7 +1,7 @@
 {
   "title": "A null-calibrated spectral-memory benchmark for hydrological model timescale diagnostics",
   "upload_type": "software",
-  "description": "Code, derived non-sensitive source-data tables, generated figures, dataset registries, and runbooks supporting a null-calibrated spectral-memory benchmark for hydrological model timescale diagnostics. Raw third-party datasets are not redistributed; official source links are listed in the dataset registry.",
+  "description": "Software, derived non-sensitive source-data tables, deterministic figures, dataset registries, and runbooks supporting an ESSD data-description manuscript on a null-calibrated spectral-memory benchmark for hydrological model timescale diagnostics. The released decision test preserves its null result. Raw third-party datasets and submission manuscripts are not redistributed; official source links are listed in the dataset registry.",
   "creators": [
     {
       "name": "Ren, Lijian",
@@ -16,7 +16,8 @@
     "spectral analysis",
     "model diagnostics",
     "CAMELS",
-    "reproducibility"
+    "reproducibility",
+    "Earth System Science Data"
   ],
   "related_identifiers": [
     {

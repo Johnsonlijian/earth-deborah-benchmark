@@ -90,6 +90,6 @@ def lomb_scargle_psd(
 
 
 def multitaper_psd(*args: object, **kwargs: object) -> pd.DataFrame:
-    """Placeholder for a future multitaper PSD estimator."""
+    """Reserved API for a validated multitaper estimator."""
 
-    raise NotImplementedError("multitaper PSD is planned but not implemented yet")
+    raise NotImplementedError("multitaper PSD is not implemented in this release")

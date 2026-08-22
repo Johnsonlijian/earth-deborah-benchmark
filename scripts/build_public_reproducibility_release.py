@@ -3,7 +3,7 @@
 The public bundle is separate from the submission package. It includes code,
 configuration, runbooks, dataset registries, selected derived source data and
 generated figures, while excluding raw third-party data, active manuscripts,
-submission cover letters, internal rounds, logs and private review material.
+submission cover letters, private workflow records, logs and review material.
 """
 
 from __future__ import annotations
@@ -30,8 +30,10 @@ TOP_FILES = [
     "DATASETS_AND_LINKS.csv",
     "pyproject.toml",
     "environment.yml",
+    "DECISION_TEST_PROTOCOL_PUBLIC_RECORD.md",
+    "RELEASE_NOTES_ESSD_R68.md",
 ]
-TOP_DIRS = ["configs", "src", "scripts", "tests"]
+TOP_DIRS = ["configs", "src", "scripts", "tests", "paper_figures"]
 SOURCE_DATA = ROOT / "source_data"
 if not SOURCE_DATA.exists():
     SOURCE_DATA = ROOT / "source_data"
@@ -153,6 +155,9 @@ def copy_source_data() -> None:
 def copy_figures() -> None:
     dst = OUT_ROOT / "figures"
     dst.mkdir(parents=True, exist_ok=True)
+    essd = MAIN_FIGURES / "essd"
+    if essd.exists():
+        shutil.copytree(essd, dst / "essd", ignore=ignore_for_copy)
     for stem in FIGURE_KEEP:
         out_stem = FIGURE_RENAME.get(stem, stem)
         copied = False
@@ -202,6 +207,7 @@ def write_release_metadata(tag: str) -> None:
         "model_ensemble_sensitivity,scripts/run_final_model_ensemble_hardening.py,20260608 plus analysis-level deterministic summaries,Seasonal AR(1) draw uncertainty, five-seed LSTM sensitivity and RRMPG budget audit",
         "all_archive_analytic_ar1,scripts/run_final_all_archive_ar1_floor.py,deterministic,Analytic companion check; not a stochastic floor",
         "figure_generation,various scripts,deterministic unless noted,Generated from derived source-data CSVs",
+        "decision_test,scripts/run_r62_decision_poc_gb.py,62 plus 5000 bootstrap draws,Time-stamped CAMELS-GB decision test with a preserved null result",
     ]
     (OUT_ROOT / "random_seed_registry.csv").write_text("\n".join(seed_rows) + "\n", encoding="utf-8")
     (OUT_ROOT / "GITHUB_RELEASE_CHECKLIST.md").write_text(
@@ -229,7 +235,7 @@ def write_release_metadata(tag: str) -> None:
                 "",
                 "Title: A null-calibrated spectral-memory benchmark for hydrological model timescale diagnostics: reproducibility package",
                 "Creators: Lijian Ren (ORCID: 0000-0003-1629-4368)",
-                "Description: Code, configuration, derived non-sensitive source data, generated figures and runbook for the HESS-targeted streamflow spectral-memory benchmark study. Raw third-party CAMELS-family, groundwater, chemistry and tracer datasets are not redistributed.",
+                "Description: Software, configuration, derived non-sensitive source data, deterministic figures and runbook supporting an ESSD data-description manuscript on the streamflow spectral-memory benchmark. The decision-test null result is preserved. Raw third-party CAMELS-family, groundwater, chemistry and tracer datasets are not redistributed.",
                 "License: see LICENSE",
                 "Related identifiers: GitHub repository URL is https://github.com/Johnsonlijian/earth-deborah-benchmark. Add the manuscript DOI after journal publication or preprint deposition.",
                 "",
@@ -275,7 +281,7 @@ def make_zip(tag: str) -> Path:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--tag", default="R58_HESS")
+    parser.add_argument("--tag", default="R68_ESSD")
     args = parser.parse_args()
 
     reset_out()
@@ -293,8 +299,8 @@ def main() -> None:
             [
                 "# Public Reproducibility Release Contents",
                 "",
-                "This bundle is prepared for a public GitHub/Zenodo-style reproducibility release.",
-                "It intentionally excludes active submission manuscripts, cover letters, internal review rounds, logs, raw third-party datasets and downloaded archives.",
+                "This bundle is prepared as a public software and reproducibility release supporting an ESSD data-description manuscript.",
+                "It intentionally excludes active or rejected manuscripts, cover letters, reviewer material, submission records, private workflow records, logs, raw third-party datasets and downloaded archives.",
                 "",
                 "Included:",
                 "",
@@ -304,7 +310,7 @@ def main() -> None:
                 "- generated publication figures;",
                 "- license and citation metadata.",
                 "",
-                "Human-only before DOI finalization: confirm Zenodo account authorization or GitHub-Zenodo integration, then record the minted archival DOI.",
+                "No dataset DOI is asserted here. Update DOI metadata only after a real archival record has been minted and verified.",
             ]
         )
         + "\n",

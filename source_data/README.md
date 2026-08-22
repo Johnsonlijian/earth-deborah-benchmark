@@ -11,10 +11,34 @@ Machine-readable maps:
 
 Each source-data CSV can be regenerated from the listed script after obtaining the public third-party datasets named in `dataset_registry.csv`.
 
+## ESSD R68 decision-test additions
+
+The 2026-08-22 public update adds six derived CAMELS-GB decision-test tables.
+They preserve the null result and are sufficient to inspect the reported
+summary and regenerate the ESSD decision-test figures. A full recomputation
+also requires the dense R39 curve table, which is omitted from Git because of
+its size, plus official CAMELS-GB v2 daily files if the observed-curve cache is
+rebuilt.
+
+| Source data file | Role |
+| --- | --- |
+| `r62_decision_poc_gb_variant_summary.csv` | Registered paired summaries for the full five-output and independent three-model sets |
+| `r62_decision_poc_gb_ind3_gauge_variants.csv` | Gauge-level selections and timescale-error differences for the three-model decision set |
+| `r62_decision_poc_gb_gauge_variants.csv` | Gauge-level selections and differences for the five-output contextual set |
+| `r62_decision_poc_gb_threshold_grid.csv` | Reported 0.50/0.55/0.60 directional threshold grid |
+| `r62_decision_poc_gb_rank_sanity.csv` | Consistency check against the stored R39 selections |
+| `r62_decision_poc_gb_obs_curves.csv` | Derived observed evaluation-period beta(De) curves used by the ablations and figure scripts |
+
 ## Files
 
 | Source data file | Evidence module | Related figure/section | Raw data family |
 | --- | --- | --- | --- |
+| `r62_decision_poc_gb_variant_summary.csv` | Time-stamped CAMELS-GB decision test | Fig. 5; Supplementary Fig. S1; technical validation | CAMELS-GB v2; R39 derived model outputs |
+| `r62_decision_poc_gb_ind3_gauge_variants.csv` | Time-stamped CAMELS-GB decision test | Fig. 5; Supplementary Fig. S1; technical validation | CAMELS-GB v2; R39 derived model outputs |
+| `r62_decision_poc_gb_gauge_variants.csv` | Time-stamped CAMELS-GB decision test | Fig. 5; technical validation context | CAMELS-GB v2; R39 derived model outputs |
+| `r62_decision_poc_gb_threshold_grid.csv` | Time-stamped CAMELS-GB decision test | Technical validation thresholds | CAMELS-GB v2; R39 derived model outputs |
+| `r62_decision_poc_gb_rank_sanity.csv` | Time-stamped CAMELS-GB decision test | Technical validation sanity check | CAMELS-GB v2; R39 derived model outputs |
+| `r62_decision_poc_gb_obs_curves.csv` | Time-stamped CAMELS-GB decision test | Fig. 1; decision-test ablations | CAMELS-GB v2 |
 | `camels_673_blocked_crossfit_memory_coordinate_metrics.csv` | CAMELS-US main memory-coordinate diagnostics | Figs. 1-2; Results: discharge persistence and memory-normalized dispersion | CAMELS-US |
 | `camels_673_collapse_metrics.csv` | CAMELS-US main memory-coordinate diagnostics | Figs. 1-2; Results: discharge persistence and memory-normalized dispersion | CAMELS-US |
 | `camels_673_memory_coordinate_attribute_modifiers.csv` | CAMELS-US main memory-coordinate diagnostics | Figs. 1-2; Results: discharge persistence and memory-normalized dispersion | CAMELS-US |

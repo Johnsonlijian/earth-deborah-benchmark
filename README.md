@@ -1,171 +1,123 @@
 # Earth Deborah Benchmark
 
-Reproducible code and derived outputs for a null-calibrated benchmark of
-streamflow timescale structure. The manuscript tests whether a
-memory-normalized frequency coordinate,
+Public code, derived source data, and deterministic figures for **A
+null-calibrated spectral-memory benchmark for hydrological model timescale
+diagnostics**.
+
+The benchmark uses the dimensionless frequency coordinate
 
 ```text
 De = tau_acf * f
 ```
 
-can compare local streamflow spectral-slope curves across catchments and expose
-hydrological model timescale-structure errors beyond NSE/KGE-style hydrograph
-skill.
+to compare local streamflow spectral-slope curves across catchments and to
+describe hydrological-model timescale errors alongside conventional hydrograph
+scores. This repository is the software and reproducibility companion for an
+Earth System Science Data (ESSD) manuscript in preparation; it is not the
+manuscript or the dataset DOI record.
 
-## Scientific Scope
+## Evidence boundary
 
-The current paper is **not** a proof that discharge spectra identify storage
-mechanisms. It is a falsification-first benchmark:
+The released analyses support a bounded, falsification-first benchmark:
 
-- observed De-axis reductions are tested against support-matched bins,
-  shuffled-memory and proxy-coordinate nulls;
-- strict gauge-matched AR(1) gates are used as an artifact floor;
-- region-cluster, forcing-side and slow-memory support audits are used as HESS
-  hardening checks;
-- independent groundwater, tracer and storage-state data are treated as
-  compatibility and boundary tests, not causal closure;
-- a same-split open GR4J/HBV-Edu/LSTM model benchmark asks whether
-  beta(De)-curve skill ranks outputs differently from hydrograph skill, with
-  seasonal AR(1) draw uncertainty and RRMPG calibration-budget sensitivity.
+- observed De-axis dispersion changes are compared with support-matched,
+  shuffled-memory, analytic, and gauge-matched stochastic-memory controls;
+- the archive-level effect is positive for several CAMELS archives but is not
+  universal, with CAMELS-DK retained as a lowland boundary case;
+- observed reductions for CAMELS-US and CAMELS-GB remain below the strict
+  gauge-matched AR(1) artifact floor;
+- the CAMELS-GB model layer compares GR4J, HBV-Edu, a global LSTM, seasonal
+  climatology, and a seasonal AR(1) reference on a common split;
+- the time-stamped decision test did **not** show that beta(De)-based model
+  selection improved held-out timescale error relative to NSE-based selection.
 
-The strongest current boundary is explicit: CAMELS-US and CAMELS-GB v2 have
-positive observed De reductions, but negative null-adjusted excess relative to
-the gauge-matched AR(1) artifact floor.
+These results do not establish storage causality, a universal spectral
+collapse, or a validated operational model-selection rule.
 
-## Repository Boundary
+## Public-release boundary
 
-This repository is intended to be the clean public reproducibility route. It may
-contain code, configuration, derived non-sensitive tables, generated figures,
-source-data indexes, dataset links, licenses and runbooks.
+Included:
 
-It must not contain raw third-party data archives, credentials, submission
-manuscripts, cover letters, response-to-reviewer files, working-round notes,
-private author/funding files or unclear-redistribution material.
+- analysis and figure-generation code;
+- derived, non-sensitive CSV tables;
+- generated SVG/PDF/PNG figures;
+- official dataset links, source-data indexes, runbooks, and citation metadata.
 
-Raw public datasets should be obtained from the official sources listed in
-`DATASETS_AND_LINKS.csv` and `source_data/dataset_registry.csv` in the public
-release. In the full author submission workspace, the same registry is mirrored
-in the private submission source-data folder and the accompanying HESS
-reproducibility support package.
+Excluded:
 
-## Quick Start
+- raw third-party datasets and downloaded archives;
+- active or rejected manuscripts, cover letters, reviewer correspondence, and
+  submission-system files;
+- private workflow rounds, logs, credentials, author/funding records, and
+  redistribution-uncertain material.
+
+Obtain raw public data from `DATASETS_AND_LINKS.csv` and
+`source_data/dataset_registry.csv`. Keep local raw files under ignored folders
+such as `data/raw/` and `data/external/`.
+
+## Quick verification from released tables
 
 Windows PowerShell:
 
 ```powershell
-cd earth-deborah-benchmark
 python -m pip install -e ".[dev,model]"
 python -m pytest
-python scripts\run_r33_matched_ar1_ensemble.py --n-surrogates 100 --workers 16 --output-prefix r33_matched_ar1_ensemble
-python scripts\run_r33_null_calibrated_ensemble_summary.py --ensemble-prefix r33_matched_ar1_ensemble
-python scripts\run_r33_artifact_floor_main_figure.py
-python scripts\make_r35_five_archive_fig2.py
-python scripts\make_r35_robustness_fig4.py
-python scripts\run_r39_open_model_intercomparison.py --workers 4 --rrmpg-samples 128 --lstm-epochs 5 --lstm-batches 260 --lstm-batch-size 64 --lstm-hidden 32 --lstm-seq-len 180
-python scripts\run_final_extreme_hardening.py --cluster-draws 1000
-python scripts\run_final_model_ensemble_hardening.py --ar1-draws 50 --rrmpg-samples 512 --workers 4
+python scripts\run_r65_essd_figures.py
+python paper_figures\src\render_essd_fig05_decision_test.py
 ```
 
-Linux/macOS shell:
+Linux/macOS:
 
 ```bash
-cd earth-deborah-benchmark
 python -m pip install -e ".[dev,model]"
 python -m pytest
-python scripts/run_r33_matched_ar1_ensemble.py --n-surrogates 100 --workers 16 --output-prefix r33_matched_ar1_ensemble
-python scripts/run_r33_null_calibrated_ensemble_summary.py --ensemble-prefix r33_matched_ar1_ensemble
-python scripts/run_r33_artifact_floor_main_figure.py
-python scripts/make_r35_five_archive_fig2.py
-python scripts/make_r35_robustness_fig4.py
-python scripts/run_r39_open_model_intercomparison.py --workers 4 --rrmpg-samples 128 --lstm-epochs 5 --lstm-batches 260 --lstm-batch-size 64 --lstm-hidden 32 --lstm-seq-len 180
-python scripts/run_final_extreme_hardening.py --cluster-draws 1000
-python scripts/run_final_model_ensemble_hardening.py --ar1-draws 50 --rrmpg-samples 512 --workers 4
+python scripts/run_r65_essd_figures.py
+python paper_figures/src/render_essd_fig05_decision_test.py
 ```
 
-Expected minimal outputs:
+The figure commands read only `source_data/` and write to `figures/essd/`.
+Expected ESSD-facing outputs are:
 
-- `reports/tables/r33_null_calibrated_ensemble_summary.csv`
-- `figures/fig01_mechanism_evidence.{pdf,png,svg}`
-- `figures/fig02_five_archive_alignment_boundary.{pdf,png,svg}`
-- `figures/fig03_robustness_support_checks.{pdf,png,svg}`
-- `figures/fig04_artifact_floor_boundary.{pdf,png,svg}`
-- `figures/fig05_multimodel_benchmark.{pdf,png,svg}`
-- `reports/tables/r39_open_model_intercomparison_summary.csv`
-- `reports/figures/r39_open_model_intercomparison.{pdf,png,svg}`
-- `reports/tables/final_extreme_hardening_cluster_bootstrap_summary.csv`
-- `reports/tables/final_extreme_hardening_forcing_control_summary.csv`
-- `reports/tables/final_model_ensemble_hardening_summary.csv`
-- `reports/figures/final_extreme_hardening_windtunnel.{pdf,png,svg}`
-- `reports/figures/final_model_ensemble_hardening.{pdf,png,svg}`
-- `source_data/source_data_index.csv` in the public release, or
-  the full author workspace when a local submission-source mirror is prepared
-- `source_data/dataset_registry.csv`
+- `fig01_dataset_overview.{png,svg}`;
+- `fig02_dispersion_intervals.{png,svg}`;
+- `fig03_null_calibration_ladder.{png,svg}`;
+- `fig04_model_layer.{png,svg}`;
+- `fig05_decision_test.{png,pdf,svg}` and `fig05_provenance.md`;
+- `supp_figS1_decision_delta_ecdf.{png,svg}`.
 
-The R39 model benchmark requires the optional model dependencies and local
-CAMELS-GB v2 extraction. The expected author-workspace layout is:
-
-```text
-data/external/camels_gb_v2/
-  hydromet_daily/
-    camels_gb_v2_hydromet_daily_timeseries_*_19701001-20220930.csv
-  attributes/
-    camels_gb_v2_hydrologic_attributes.csv
-    camels_gb_v2_topographic_attributes.csv
-    camels_gb_v2_climatic_attributes.csv
-```
-
-The formal R39 run used 671 hydromet daily CSV files, 128 RRMPG parameter
-samples per gauge/model, seed `20260608`, and a global LSTM with 32 hidden
-units, 180-day windows, five epochs and 260 batches per epoch. Expected valid
-summary counts are RRMPG GR4J = 579, RRMPG HBV-Edu = 602, global LSTM = 658 and
-seasonal AR(1) null = 666.
-
-The final HESS hardening run used 1000 region-cluster bootstrap draws, a GB
-forcing-side precipitation spectral control, slow-memory support audits, a
-50-draw seasonal AR(1) model-null ensemble, a five-seed LSTM sensitivity check
-and a 512-vs-128 RRMPG calibration-budget audit. The RRMPG budget audit
-produced 1136 paired gauge/model deltas.
-
-## Main Evidence Modules
+## Main reproducibility modules
 
 | Module | Purpose | Representative scripts |
 | --- | --- | --- |
-| CAMELS-US/GB benchmark | Main De-axis variance and curve-distance tests | `run_camels_full.py`, `run_camels_gb_replication.py`, `analyze_convergent_curve_alignment_metric.py` |
-| Artifact-floor gates | Support-matched bins, multi-draw gauge-matched AR(1), null-adjusted score | `analyze_r20_support_matched_sensitivity.py`, `run_r33_matched_ar1_ensemble.py`, `run_r31_gauge_level_ar1_boundary.py`, `run_r33_null_calibrated_ensemble_summary.py` |
-| HESS hardening controls | Region-cluster uncertainty, forcing-side precipitation control, slow-memory support audit | `run_final_extreme_hardening.py` |
-| Model benchmark | Same-split open GR4J/HBV-Edu/LSTM, conceptual-model history, memory-null comparison, AR(1) ensemble and RRMPG budget sensitivity | `run_r39_open_model_intercomparison.py`, `run_final_model_ensemble_hardening.py`, `run_r38_established_model_suite.py`, `run_r23_multimodel_hydrology_benchmark.py`, `run_r22_model_null_context.py` |
-| Portability and boundaries | CAMELS-BR, CAMELS-AUS, CAMELS-DK, groundwater and tracer-facing checks | `run_r23_camels_br_third_archive.py`, `run_r25_camels_aus_fourth_archive.py`, `run_r27_camels_dk_groundwater_storage_validation.py`, `run_r28_tracer_compatibility_validation.py` |
-| Main figure synthesis | Five-archive Fig. 2 and robustness Fig. 4 from traceable source tables | `make_r35_five_archive_fig2.py`, `make_r35_robustness_fig4.py` |
-| Submission source-data map | Reviewer-facing file-to-claim/source/script index | `source_data/source_data_index.csv` |
+| CAMELS-US/GB benchmark | De-axis variance and curve-distance tests | `run_camels_full.py`, `run_camels_gb_replication.py`, `analyze_convergent_curve_alignment_metric.py` |
+| Artifact-floor gates | Support matching, stochastic-memory controls, null-adjusted score | `analyze_r20_support_matched_sensitivity.py`, `run_r33_matched_ar1_ensemble.py`, `run_r33_null_calibrated_ensemble_summary.py`, `run_r37_gauge_matched_analytic_nulls.py` |
+| Cross-archive boundary | CAMELS-BR, CAMELS-AUS, CAMELS-DK, bootstrap and forcing/support audits | `run_r23_camels_br_third_archive.py`, `run_r25_camels_aus_fourth_archive.py`, `run_r27_camels_dk_groundwater_storage_validation.py`, `run_final_extreme_hardening.py` |
+| Model layer | Same-split GR4J/HBV-Edu/LSTM and reference outputs | `run_r39_open_model_intercomparison.py`, `run_final_model_ensemble_hardening.py` |
+| Decision test | Timescale-error comparison and coordinate ablations | `run_r62_decision_poc_gb.py` |
+| ESSD figures | Released-table-only rendering | `run_r65_essd_figures.py`, `paper_figures/src/render_essd_fig05_decision_test.py` |
 
-## Data And Code Availability
+The dense R39 curve table is intentionally omitted from Git tracking because
+of its size. `source_data/LARGE_DERIVED_OUTPUTS.csv` identifies large omitted
+outputs and their generating scripts. A full R62 rerun requires that dense
+table plus an authorized local CAMELS-GB v2 extraction; the released R62 tables
+are sufficient to verify the reported decision-test result and regenerate its
+figures.
 
-The code is prepared for public release under the remote
-`https://github.com/Johnsonlijian/earth-deborah-benchmark.git`. Repository
-archival and DOI minting are handled through a GitHub release and Zenodo
-integration.
+## Decision-test provenance
 
-No raw third-party archives are redistributed. Derived source-data files are
-included only when they are non-sensitive and do not violate dataset terms.
-Two dense derived curve tables are omitted from Git tracking because they exceed
-GitHub file-size limits; see `source_data/LARGE_DERIVED_OUTPUTS.csv` for the
-regeneration scripts.
+`DECISION_TEST_PROTOCOL_PUBLIC_RECORD.md` is a public transcription of the
+scientific design that was frozen before the full decision-test run. It records
+the original protocol hash and amendment times, while clearly stating that the
+transcription itself is not independent proof of the earlier timestamp. The
+source protocol is excluded because it also contains private workflow
+administration unrelated to scientific reproduction.
 
-## Current Prepared Artifacts
+## Citation and archival status
 
-The current package round is R59-HESS-figure-5c-readability, dated 2026-06-12.
+Use `CITATION.cff` for the software repository. Dataset citations must use the
+official DOIs or URLs in the dataset registry. No new dataset DOI is claimed in
+this repository; insert a manuscript-side DOI only after an archival record
+has actually been minted.
 
-| Artifact | Path | Notes |
-| --- | --- | --- |
-| HESS review package | not stored in this public repository | The upload-ready manuscript/SI/source package is kept in the private author workspace. |
-| Public reproducibility release | this repository | Code, tests, runbook, dataset registry, derived source data and generated figures. |
-
-Final journal upload still requires author-only portal metadata: APC/billing
-route, funding, competing interests, acknowledgements and any suggested or
-excluded reviewers.
-
-## Citation
-
-Use `CITATION.cff` after the final title, author list and repository DOI are
-confirmed. Dataset citations must use the official source DOIs/URLs listed in
-`DATASETS_AND_LINKS.csv`.
+See `REPRODUCIBLE_RUNBOOK.md` for the detailed execution route and
+`RELEASE_NOTES_ESSD_R68.md` for the 2026-08-22 public update.
