@@ -1,0 +1,25 @@
+name: earth-deborah-benchmark
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scipy
+  - statsmodels
+  - matplotlib
+  - scikit-learn
+  - geopandas
+  - shapely
+  - pyproj
+  - fiona
+  - pydantic
+  - pyyaml
+  - requests
+  - tqdm
+  - pytest
+  - pip
+  - pip:
+      - -e .
+      - torch>=2
+      - rrmpg @ git+https://github.com/kratzert/RRMPG.git@7de78c25acc1c255d2acaf739d65e9ce7bbd60c3

@@ -1,21 +1,12 @@
 cff-version: 1.2.0
-message: "If you use this benchmark, please cite this repository, the manuscript when available, and the original datasets used."
-title: "A null-calibrated spectral-memory benchmark for hydrological model timescale diagnostics"
+message: "Please cite this software and the accompanying Dataset separately: https://doi.org/10.5281/zenodo.22055294."
+title: "Code for: A benchmark dataset of null-calibrated streamflow spectral-memory diagnostics for five CAMELS-family archives, with open rainfall-runoff model outputs for CAMELS-GB v2"
 type: software
-version: 0.2.0
-date-released: 2026-08-22
+version: 0.2.1
+date-released: 2026-11-03
 license: MIT
 repository-code: "https://github.com/Johnsonlijian/earth-deborah-benchmark"
 authors:
   - family-names: "Ren"
     given-names: "Lijian"
     orcid: "https://orcid.org/0000-0003-1629-4368"
-preferred-citation:
-  type: article
-  title: "A null-calibrated spectral-memory benchmark for hydrological model timescale diagnostics"
-  authors:
-    - family-names: "Ren"
-      given-names: "Lijian"
-      orcid: "https://orcid.org/0000-0003-1629-4368"
-  year: 2026
-  notes: "Manuscript being prepared for Earth System Science Data; use the published article DOI when available."

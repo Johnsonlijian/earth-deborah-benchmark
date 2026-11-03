@@ -1,5 +1,24 @@
 # Reproducible Runbook
 
+## Dataset version 1.0.0
+
+The exact deposited analysis code is in dataset_release/v1.0.0/code, with
+per-file SHA-256 values in dataset_release/v1.0.0/CODE_SHA256.csv.
+Get the corresponding derived-data archive from
+https://doi.org/10.5281/zenodo.22055294 and follow
+dataset_release/v1.0.0/DATASET_RUNBOOK.md to reconstruct the original paths.
+Do not substitute repository-root runners for the deposited version without
+checking file identities and input/output conventions.
+
+The public release refresh changes documentation and adds the exact archived
+code snapshot. It does not rerun the numerical workflow or alter its outputs.
+
+## Historical repository-root workflow
+
+The instructions below apply to the retained repository-root implementation,
+not directly to the versioned deposit-layout snapshot.
+
+
 This runbook separates checks that use only released derived tables from full
 recomputations that require official third-party data. The repository excludes
 raw datasets and active submission documents.
