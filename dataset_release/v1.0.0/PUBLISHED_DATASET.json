@@ -1,0 +1,21 @@
+{
+  "dataset_doi": "10.5281/zenodo.22055294",
+  "dataset_url": "https://doi.org/10.5281/zenodo.22055294",
+  "zenodo_record_url": "https://zenodo.org/records/22055294",
+  "version": "1.0.0",
+  "archive": "earth-deborah-benchmark-dataset-v1.0.0.zip",
+  "bytes": 129736203,
+  "sha256": "316e2128742d22de4c358d6e94af33d7d5eb140f701e62dfb17e45a570ef9e62",
+  "md5": "013d7a70a306989395e7db82880dee46",
+  "github_code_snapshot_commit": "990843066c7ed05c99ddb35ef29ec163616325f6",
+  "github_code_path": "dataset_release/v1.0.0/code/",
+  "code_files_identical_to_zenodo": 89,
+  "scientific_payload_unchanged_files": 229,
+  "verification": {
+    "doi_http": 200,
+    "anonymous_file_http": 206,
+    "full_file_download_and_sha256": true,
+    "zip_crc_pass": true,
+    "verified_at": "2026-11-03T21:05:00+08:00"
+  }
+}

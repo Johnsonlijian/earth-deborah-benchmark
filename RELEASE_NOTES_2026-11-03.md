@@ -7,5 +7,7 @@
 - Keep third-party raw data and private submission materials outside this update.
 - No numerical reanalysis or scientific output modification was performed.
 - Published Dataset record: https://doi.org/10.5281/zenodo.22055294.
-  Actual availability is determined by that record; release-verification details
-  will be added after the public download has been checked.
+  The DOI resolves and the full ZIP downloads without authentication.
+  Downloaded bytes and SHA-256 match the release archive; ZIP CRC checks pass.
+- Public verification and exact archive checksums:
+  dataset_release/v1.0.0/PUBLISHED_DATASET.json.
